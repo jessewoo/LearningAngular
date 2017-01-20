@@ -1,57 +1,27 @@
 // MODULE
-var angularApp = angular.module('angularApp', []);
+// Add in different dependencies
+var angularApp = angular.module('angularApp', ['ngMessages', 'ngResource']);
 
-var Person = function(firstname, lastname) {
-  this.firstname = firstname;
-  this.lastname = lastname;
-}
-
-function logPerson(person) {
-  console.log(person);
-}
-
-// Pass the object to the function - Dependency Injection (like Syringe)
-// Do not create the object inside the function - gets complicated to manage
-var john = new Person('John', 'Doe');
-logPerson(john);
-
-// CONTROLLERS
-// Can pass $scope
-angularApp.controller('mainController', function ($scope) {
-  // Whatever is in here is the MODEL
-
+// CONTROLLERS - included parameters
+angularApp.controller('mainController', function ($scope, $log, $filter, $resource) {
   // Add variables and function to the scope, becoming the middle view betwen the controller and the view. $scope is the data that will go back and forth between controlle and view.
-  /*
-  $scope.name = "Jane Doe";
-  $scope.occupation = "Coder";
 
-  $scope.getname = function() {
-    return 'Jonh Doe';
-  }
+// Eco-system of services
+  console.log($log);
 
-  $scope.getName();
-  */
+  $log.log("hello");
+  $log.info("This is some info")
+  $log.warn("warning")
+  $log.error("error!")
 
-  // $scope object was created and passed to the controller function
-  // Angular looked at the controller function and parsed out $scope
-  // Put variable correctly in function and you will get it. 
-  console.log($scope);
+  // console.log($scope);
+  console.log($resource);
+
+  $scope.name = 'John';
+  $scope.formattedname = $filter('uppercase')($scope.name);
+
+  $log.info($scope.name)
+  $log.info($scope.formattedname)
 
 
 });
-
-var searchPeople = function (firstName, lastName, height, age, occupation) {
-  return "Jesse Woo";
-}
-
-// Finding the arguments of a certain function
-console.log(angular.injector().annotate(searchPeople));
-
-
-console.log(searchPeople(1,2,3,4,5));
-
-// Turn a function into a string. Parse out, expected to see the arguments
-console.log(searchPeople);
-
-var searchPeopleString = searchPeople.toString();
-console.log(searchPeopleString);
