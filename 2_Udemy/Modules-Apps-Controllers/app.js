@@ -6,17 +6,16 @@ var Person = function(firstname, lastname) {
   this.lastname = lastname;
 }
 
-function logPerson() {
-  //  Currently it'a a dependency...if you need to change john, you change it inside the function
-  var john = new Person('John', 'Doe');
-  console.log(john);
+function logPerson(person) {
+  console.log(person);
 }
 
-logPerson();
+// Pass the object to the function - Dependency Injection
+// Do not create the object inside the function - gets complicated to manage
+var john = new Person('John', 'Doe');
+logPerson(john);
 
 // CONTROLLERS
 angularApp.controller('mainController', ['$scope', function ($scope) {
-
   // Whatever is in here is the MODEL
-
 }]);
