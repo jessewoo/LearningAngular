@@ -23,5 +23,14 @@ angularApp.controller('mainController', function ($scope, $log, $filter, $resour
   $log.info($scope.name)
   $log.info($scope.formattedname)
 
-
 });
+
+// Number and Strings, could also have an array of functions
+var things =
+  [1,'2',
+    function() {
+      alert("Hello!");
+    }];
+
+console.log(things);
+things[2]();
