@@ -42,8 +42,12 @@
                     <input type="text" ng-model="handle" />    
                 </div>
 
+                <div class="alert" ng-if="handle.length !== characters">
+                    Must be 5 characters!
+                </div>
+
                 <hr>
-                <!-- Then outputing the variable that got binded  -->
+
                 <h1>Google.com/{{ handle }}</h1>
              </div>
        </div>

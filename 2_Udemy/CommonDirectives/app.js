@@ -8,5 +8,7 @@ angularApp.controller('mainController', ['$scope', '$filter', function ($scope, 
 		return $filter('lowercase')($scope.handle);
 	};
 
+	$scope.characters = 5;
+
 
 }]);
