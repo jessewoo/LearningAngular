@@ -22,11 +22,8 @@ angularApp.controller('mainController', ['$scope', '$filter', '$timeout', functi
 	// This is regular JAVASCRIPT function, it creates another EVENT LOOP in it's memory. NEW THREAD, inside JS memory. Does this Asyncronously. Runs this function, while other functions are running as well. This is OUTSIDE Angular JS context, didn't realize user had changed the value. NEVER started the Digest loop, never cycled thru the watchlist. 
 	$timeout(function() {
 
-		//  Start a DIGEST Cycle
-		$scope.$apply(function() {
-			$scope.handle = "hello";
-			console.log("scope changed");
-		})
+		$scope.handle = "hello";
+		console.log("scope changed");
 
 	}, 3000);
 
