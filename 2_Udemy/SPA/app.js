@@ -22,12 +22,16 @@ angularApp.config(function($routeProvider) {
 
 })
 
-
+// $log = singleton, only ONE object, big memory savings
+// $scope = is a CHILD scope, exception to the rule, not a singleton
 angularApp.controller('mainController', ['$scope', '$location', '$log', function ($scope, $location, $log) {
 
 	// Know what is in the hash
 	$log.info($location.path());
 	$scope.name = "Main";
+
+	$log.main = "Property from main";
+	$log.log($log);
 
 }]);
 
@@ -37,5 +41,8 @@ angularApp.controller('secondController', ['$scope', '$location', '$log', '$rout
 	$log.info($location.path());
 	$scope.name = "Second";
 	$scope.num = $routeParams.num || 1 ;
+
+	$log.second = "Property from second";
+	$log.log($log);
 
 }]);
