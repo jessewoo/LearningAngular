@@ -11,6 +11,7 @@ angularApp.config(function($routeProvider) {
 	// ROUTE
 
 	// http://stackoverflow.com/questions/18586921/how-to-launch-html-using-chrome-at-allow-file-access-from-files-mode
+	// http-server -a localhost -p 8000 -c-1
 	.when('/', {
 		// VIEW with template URL
 		templateUrl: 'pages/main.html',
@@ -36,10 +37,9 @@ angularApp.controller('mainController', ['$scope', '$log', function($scope, $log
 
 	// MODEL
 	$scope.person = {
-		name: 'John Doe',
-		address: '2313 Meadowvale';
+		name: 'Jesse Woo Hoo',
+		address: '456 Main St., New York, NY'
 	}
-	
 
 }]);
 
@@ -55,12 +55,13 @@ angularApp.controller('secondController', ['$scope', '$log', '$routeParams', fun
 // Replace: true - replaces the HTML
 angularApp.directive("searchResult", function() {
 	return {
-		// Attribute (A), Element (E) - defaults
-		// Class (C) can be implemented
-		// Comments (M)
 		restrict: 'AEMC',
 		templateUrl: 'directives/searchresult.html',
-		replace: true
+		replace: true,
+		scope: {
+			personName: "@",
+			personAddress: "@"
+		}
 
 	}
 })
