@@ -1,0 +1,22 @@
+<label>Search</label><br>
+<input type="text" value="Doe" />
+
+<h3>Search Results</h3>
+<div class="list-group">
+	<!-- SearchResult is what was downloaded in HTTP request -->
+	<!-- Saw that it was a directive, went and grabbed that directive in JS -->
+	<!-- Look how clean it is - semantically, AVOID REPETITION -->
+
+	<!-- ***** ELEMENT ***** -->
+	<search-result></search-result>
+	<search-result></search-result>
+
+	<!-- ***** ATTRIBUTE ***** -->
+	<div search-result></div>
+
+	<!-- ***** CLASS - Not used that often ***** -->
+	<div class='search-result'></div>
+
+	<!-- ***** COMMENT - Not used that often ***** -->
+	<!-- directive: search-result -->
+</div>
