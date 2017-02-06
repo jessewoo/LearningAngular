@@ -36,9 +36,32 @@ angularApp.config(function($routeProvider) {
 angularApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
 
 	// MODEL
-	$scope.person = {
-		name: 'Jesse Woo Hoo',
-		address: '456 Main St., New York, NY'
+	$scope.people = [
+	{
+		name: 'Jesse Woo',
+		address: '456 Main St.',
+		city: 'New York',
+		state: 'NY',
+		zip: '11111'
+	},
+	{
+		name: 'Cole Christie',
+		address: '123 Broadway St.',
+		city: 'San Diego',
+		state: 'CA',
+		zip: '11111'
+	},
+	{
+		name: 'Chris Randle',
+		address: '987 One St.',
+		city: 'San Francisco',
+		state: 'CA',
+		zip: '11111'
+	}]
+
+
+	$scope.formattedAddress = function(person) {
+		return person.address + ', ' + person.city + ', ' + person.state + ' ' + person.zip;
 	}
 
 }]);
@@ -59,8 +82,11 @@ angularApp.directive("searchResult", function() {
 		templateUrl: 'directives/searchresult.html',
 		replace: true,
 		scope: {
-			personObject: "="
+			personObject: "=",
+			formattedAddressFunction: "&"
 		}
 
 	}
 })
+
+
