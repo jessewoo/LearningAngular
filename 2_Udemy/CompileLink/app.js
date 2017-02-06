@@ -85,27 +85,17 @@ angularApp.directive("searchResult", function() {
 			personObject: "=",
 			formattedAddressFunction: "&"
 		},
-		compile: function(elem, attrs) {
-
-			console.log("Compiling...");
-			// elem.removeAttr('class');
-			console.log(elem.html);
-
-			// Runs the prelink, then looks for any directives inside the directive
-			// Once it gets to the last directive, then it runs postlink - back up the chain
-			// Post link is SAFER, know inside the directive
-			return {
-				// Don't use Pre-link
-				pre: function(scope, elements, attrs){
-
-					console.log("Pre-linking...");
-					console.log(elements);
-				},
-				post: function(scope, elements, attrs){
-					console.log("Post-linking...");
-					console.log(elements);
-				}
+		link: function(scope, elements, attrs){
+			console.log("Post-linking...");
+			console.log("Model" + scope);
+			
+			// Functions that you can run, changes you can make
+			// Control it's output, scope. Nice and encapsulated
+			if (scope.personObject.name == "Jesse Woo") {
+				elements.removeAttr('class');
 			}
+			// Dealing with Code
+			console.log("View" + elements);
 
 		}
 
