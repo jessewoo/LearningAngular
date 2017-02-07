@@ -85,19 +85,7 @@ angularApp.directive("searchResult", function() {
 			personObject: "=",
 			formattedAddressFunction: "&"
 		},
-		link: function(scope, elements, attrs){
-			console.log("Post-linking...");
-			console.log("Model" + scope);
-			
-			// Functions that you can run, changes you can make
-			// Control it's output, scope. Nice and encapsulated
-			if (scope.personObject.name == "Jesse Woo") {
-				elements.removeAttr('class');
-			}
-			// Dealing with Code
-			console.log("View" + elements);
-
-		}
+		transclude: true
 
 	}
 })
