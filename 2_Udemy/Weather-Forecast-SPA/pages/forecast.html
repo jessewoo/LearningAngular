@@ -1,14 +1,21 @@
+<a href="#" class="btn btn-sm btn-default">Go back to Search</a>
+<hr>
 <div class="row">
 	<div class="col-md-12">
 		<h4>This is the forecast of {{ city }}</h4>
-	</div>
 
-	<div class="col-md-12" ng-repeat="w in weatherResult.list">
-		<div class="panel panel-default">
-			<div class="panel-heading">{{ convertToDate(w.dt) | date: 'MMM d, y' }}</div>
-			<div class="panel-body">
-			  Daytime Temperature: {{ convertToFahrenheit(w.temp.day) }}
-			</div>
+		<hr>
+
+		<div class="btn-group" role="group">
+		  <a href="#/forecast/2" class="btn" ng-class="{ 'bg-primary': days === '2'}">2</a>
+		  <a href="#/forecast/5" class="btn" ng-class="{ 'bg-primary': days === '5'}">5</a>
+		  <a href="#/forecast/7" class="btn" ng-class="{ 'bg-primary': days === '7'}">7</a>
 		</div>
+	</div>
+</div>
+<br>
+<div class="row">	
+	<div class="col-md-12" ng-repeat="w in weatherResult.list">
+		<weather-panel weather-day="w" convert-to-standard="convertToFahrenheit(daytimeTemp)" convert-to-date="convertToDate(dt)" date-format="MMM d, y"></weather-panel>
 	</div>
 </div>
