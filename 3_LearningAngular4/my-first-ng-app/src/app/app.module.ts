@@ -9,6 +9,7 @@ import { MainContainerComponent } from './main-container/main-container.componen
 import { InnerComponent } from './inner/inner.component';
 
 import { HttpClientModule } from '@angular/common/http'
+import { InterceptorModule } from './interceptor.module'
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http'
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    InterceptorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

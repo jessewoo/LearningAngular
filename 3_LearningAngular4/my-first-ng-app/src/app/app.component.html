@@ -1,8 +1,34 @@
 <div class='main-container'>
-  <span>Main Container</span>
+  <h1>Angular 4 Tutorials from techsith</h1>
+  <p><a href='https://www.youtube.com/watch?v=MN2WkxPnGTo&list=PL7pEw9n3GkoWoDfLSOQCtLIEg-gL5dYOF&index=5'>Playlist</a></p>
 
+  <h2>Tutorial 1: Creating Components Using CLI</h2>
   <app-names></app-names>
 
+  <h2>Tutorial 2: Showing Data Down, Action Up</h2>
   <app-main-container></app-main-container>
+
+</div>
+
+
+<div id='getProfileForm'>
+  <h2>Tutorial 3: HTTP GET and POST request</h2>
+  <p>Uses typicode.com as server</p>
+  <input type='text' (keyup)='onNameKeyUp($event)'>
+  <button (click)='getProfile()'>Get Profile</button>
+  <hr>
+  <div *ngIf='found'>
+    <span>{{name}}'s age is {{age}}</span>
+  </div>
+
+  -----------
+  <br>
+
+  <p>Not really posting onto fake server, smart enough to detect it</p>
+  <button (click)='postProfile()'>Post Profile</button>
+
+  <br>
+  <p>Security settings. CORS - Cross Origin Resource Sharing - access control allow origin. Used to get around the browsers 'same origin' policy. For security purposes, a browser won't load requests for resources to other domains when those requests are initiated by JS. CORS supplies a special header that specifies which domains may make AJAX calls for its resources. </p>
+  <p>For this tutorial, we can use an interceptor.</p>
 
 </div>

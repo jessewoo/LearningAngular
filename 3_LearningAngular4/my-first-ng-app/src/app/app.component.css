@@ -1,3 +1,11 @@
 .main-container {
     border: 1px solid green;
+    padding: 20px;
+}
+
+#getProfileForm {
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    border: 1px solid gray;
 }
