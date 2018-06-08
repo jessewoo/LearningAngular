@@ -1,0 +1,6 @@
+<div>
+  <h1>Data Down, Action Up</h1>
+  <p>Data from TS: {{coworkers}}</p>
+  <div>Selected in Main: {{coworker}}</div>
+  <app-outer [coworkers]='coworkers' (eventFromOuter)='eventFromOuter($event)'></app-outer>
+</div>

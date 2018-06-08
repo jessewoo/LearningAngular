@@ -1,4 +1,9 @@
 <div class="Outer">
   Outer Component Works!
-  <span>{{names}}</span>
+  <span>{{coworkers}}</span>
+  <div>Selected in Outer: {{coworker}}</div>
+  <br>
+  <!-- Outer has event from inner container, Outer now has to implement this -->
+  <app-inner *ngFor='let coworker of coworkers' [coworker]='coworker' (eventFromInner)='eventFromInner($event)'></app-inner>
+
 </div>

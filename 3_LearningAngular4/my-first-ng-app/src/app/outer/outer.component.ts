@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-outer',
@@ -6,10 +6,18 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./outer.component.css']
 })
 export class OuterComponent implements OnInit {
-  @Input() names;
+  coworker:string = '';
+
+  @Input() coworkers:string[];
+  @Output() eventFromOuter = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit() {
+  }
+
+  eventFromInner(passed:string) {
+    this.coworker = passed;
+    this.eventFromOuter.emit(this.coworker)
   }
 
 }

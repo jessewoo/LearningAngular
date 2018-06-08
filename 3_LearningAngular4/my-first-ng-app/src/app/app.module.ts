@@ -5,13 +5,17 @@ import { AppComponent } from './app.component';
 import { NamesComponent } from './names/names.component';
 import { NameTagComponent } from './name-tag/name-tag.component';
 import { OuterComponent } from './outer/outer.component';
+import { MainContainerComponent } from './main-container/main-container.component';
+import { InnerComponent } from './inner/inner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NamesComponent,
     NameTagComponent,
-    OuterComponent
+    OuterComponent,
+    MainContainerComponent,
+    InnerComponent
   ],
   imports: [
     BrowserModule

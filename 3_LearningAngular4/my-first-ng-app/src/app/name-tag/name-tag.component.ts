@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-name-tag',
@@ -7,15 +7,9 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 })
 export class NameTagComponent implements OnInit {
   @Input() name:string;
-  @Output() eventFromInner = new EventEmitter<string>();
   constructor() { }
 
   ngOnInit() {
-  }
-
-  sendToOuter() {
-    console.log('clicked');
-    this.eventFromInner.emit(this.name);
   }
 
 }
