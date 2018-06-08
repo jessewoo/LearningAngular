@@ -8,6 +8,8 @@ import { OuterComponent } from './outer/outer.component';
 import { MainContainerComponent } from './main-container/main-container.component';
 import { InnerComponent } from './inner/inner.component';
 
+import { HttpClientModule } from '@angular/common/http'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +20,8 @@ import { InnerComponent } from './inner/inner.component';
     InnerComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
