@@ -1,0 +1,13 @@
+.fas {
+    color: #ccc;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.highlighted {
+    color: deeppink;
+}
+
+#likedComponent {
+    padding: 20px;
+}

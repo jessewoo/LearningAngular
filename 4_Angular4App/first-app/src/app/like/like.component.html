@@ -1,0 +1,9 @@
+<div id='likedComponent'>
+  <i 
+    class="fas fa-heart"
+    [class.highlighted] = 'isActive'
+    (click)='onClick()'>
+  </i>
+
+  <span>{{ likesCount }}</span>
+</div>
